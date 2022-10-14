@@ -214,9 +214,10 @@ class ViewController: UIViewController {
         questionNumLabel.text = numQuestion
     }
     func generate() -> String{
-        var newMovie = movies[Int.random(in: 0..<3)]
+        var newMovie = movies[Int.random(in: 0..<4)]
         while (newMovie.number == 0 ) {
-            newMovie = movies[Int.random(in: 0..<3)]
+            newMovie = movies[Int.random(in: 0..<4)]
+            print(newMovie.answer)
         }
         newMovie.number = 0
         return newMovie.answer
@@ -232,33 +233,21 @@ class ViewController: UIViewController {
         } else {
             buttonAns1.setTitle(generate(), for: UIControl.State.normal)
         }
-        for movie in movies where movie.answer == buttonAns1.currentTitle{
-            movies.remove(at: movie.number)
-            }
         if randNum == 2{
             buttonAns2.setTitle(randQuestion.answer, for: UIControl.State.normal)
         } else {
             buttonAns2.setTitle(generate(), for: UIControl.State.normal)
         }
-        for movie in movies where movie.answer == buttonAns1.currentTitle{
-            movies.remove(at: movie.number)
-            }
         if randNum == 3{
             buttonAns3.setTitle(randQuestion.answer, for: UIControl.State.normal)
         } else {
             buttonAns3.setTitle(generate(), for: UIControl.State.normal)
         }
-        for movie in movies where movie.answer == buttonAns1.currentTitle{
-            movies.remove(at: movie.number)
-            }
         if randNum == 4{
             buttonAns4.setTitle(randQuestion.answer, for: UIControl.State.normal)
         } else {
             buttonAns4.setTitle(generate(), for: UIControl.State.normal)
         }
-        for movie in movies where movie.answer == buttonAns1.currentTitle{
-            movies.remove(at: movie.number)
-            }
         if currentQuestionIndex == 1 {
             let question: String = question1
             questionLabel.text = question
