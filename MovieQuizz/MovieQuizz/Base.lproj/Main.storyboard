@@ -8,22 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Second View-->
+        <!--HomeView-->
         <scene sceneID="QVB-Bw-rMe">
             <objects>
-                <viewController title="Second View" id="tds-1Q-JvH" customClass="SecondView" customModule="MovieQuizz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HomeView" id="tds-1Q-JvH" customClass="HomeView" customModule="MovieQuizz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ibo-DZ-XOA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieQuizz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-oV-8F2">
-                                <rect key="frame" x="162.5" y="64" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="106.5" y="64" width="201.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soS-BF-wwx">
-                                <rect key="frame" x="181.5" y="785" width="51" height="31"/>
+                                <rect key="frame" x="181.5" y="812" width="51" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Play"/>
                                 <connections>
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnc-An-ms2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1242.0289855072465" y="-325.44642857142856"/>
+            <point key="canvasLocation" x="-1999" y="-325"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -169,14 +169,97 @@
                         <outlet property="nextQuestion" destination="iRH-Za-Ian" id="8A3-5C-L2Y"/>
                         <outlet property="questionLabel" destination="opw-1g-PAn" id="2SZ-RX-YvJ"/>
                         <outlet property="questionNumLabel" destination="6dv-dc-H0v" id="yB3-gr-DK2"/>
+                        <outlet property="quizScore" destination="DjA-Df-4Ni" id="6aW-Mj-AMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-530.43478260869574" y="-325.44642857142856"/>
         </scene>
+        <!--nextView-->
+        <scene sceneID="xOD-wB-njh">
+            <objects>
+                <viewController storyboardIdentifier="nextView" title="nextView" modalTransitionStyle="crossDissolve" id="yaP-ar-V9k" customClass="nextViewController" customModule="MovieQuizz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CvB-Lw-tLV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHZ-8O-9Cx">
+                                <rect key="frame" x="46" y="100" width="322" height="95"/>
+                                <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9w-jD-a6P">
+                                <rect key="frame" x="163" y="195" width="88" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5K-25-jrO">
+                                <rect key="frame" x="161.5" y="578" width="91" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Play Again"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="ssH-EJ-CfQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6N-zE-aGX">
+                                <rect key="frame" x="175.5" y="712" width="63" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Home"/>
+                                <connections>
+                                    <segue destination="tds-1Q-JvH" kind="presentation" modalPresentationStyle="fullScreen" id="KpY-CM-i3A"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAK-Va-qsq">
+                                <rect key="frame" x="62.5" y="239" width="289" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ3-J7-DVS">
+                                <rect key="frame" x="129" y="283" width="156" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0L4-fk-0z0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TAK-Va-qsq" firstAttribute="centerX" secondItem="CvB-Lw-tLV" secondAttribute="centerX" id="0ks-Xc-FWf"/>
+                            <constraint firstItem="X6N-zE-aGX" firstAttribute="centerX" secondItem="0L4-fk-0z0" secondAttribute="centerX" id="Few-Uh-cNq"/>
+                            <constraint firstItem="RQ3-J7-DVS" firstAttribute="top" secondItem="TAK-Va-qsq" secondAttribute="bottom" constant="8" symbolic="YES" id="Lic-wp-aAm"/>
+                            <constraint firstItem="HHZ-8O-9Cx" firstAttribute="top" secondItem="0L4-fk-0z0" secondAttribute="top" constant="56" id="UaE-Dz-5zt"/>
+                            <constraint firstItem="g5K-25-jrO" firstAttribute="top" secondItem="q9w-jD-a6P" secondAttribute="bottom" constant="347" id="VVX-6x-wfM"/>
+                            <constraint firstItem="X6N-zE-aGX" firstAttribute="top" secondItem="g5K-25-jrO" secondAttribute="bottom" constant="103" id="Wet-8x-FSf"/>
+                            <constraint firstItem="g5K-25-jrO" firstAttribute="centerX" secondItem="0L4-fk-0z0" secondAttribute="centerX" id="a2w-da-Flg"/>
+                            <constraint firstItem="TAK-Va-qsq" firstAttribute="top" secondItem="q9w-jD-a6P" secondAttribute="bottom" constant="8" symbolic="YES" id="sbD-ZX-gIp"/>
+                            <constraint firstItem="q9w-jD-a6P" firstAttribute="centerX" secondItem="0L4-fk-0z0" secondAttribute="centerX" id="t9w-33-tOD"/>
+                            <constraint firstItem="q9w-jD-a6P" firstAttribute="top" secondItem="HHZ-8O-9Cx" secondAttribute="bottom" id="u4X-Lo-z20"/>
+                            <constraint firstItem="HHZ-8O-9Cx" firstAttribute="centerX" secondItem="0L4-fk-0z0" secondAttribute="centerX" id="wNz-3i-ITt"/>
+                            <constraint firstItem="RQ3-J7-DVS" firstAttribute="centerX" secondItem="CvB-Lw-tLV" secondAttribute="centerX" id="xKE-UT-j79"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="finalScoreLabel" destination="RQ3-J7-DVS" id="zyu-iT-4aN"/>
+                        <outlet property="numOfQuest" destination="TAK-Va-qsq" id="jM9-oA-21V"/>
+                        <outlet property="scoreLabel" destination="q9w-jD-a6P" id="9KZ-by-aUP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zz-s5-v3p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="252" y="-325"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ssH-EJ-CfQ"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

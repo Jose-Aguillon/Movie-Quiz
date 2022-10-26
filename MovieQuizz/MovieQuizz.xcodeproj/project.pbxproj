@@ -12,6 +12,7 @@
 		1F04ADC828EF74CF00D88F37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04ADC728EF74CF00D88F37 /* ViewController.swift */; };
 		1F04ADCD28EF74D000D88F37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F04ADCC28EF74D000D88F37 /* Assets.xcassets */; };
 		1F04ADD028EF74D000D88F37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F04ADCE28EF74D000D88F37 /* LaunchScreen.storyboard */; };
+		1F5E69F229087BB5006E4FB7 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5E69F129087BB5006E4FB7 /* Movies.swift */; };
 		1F8929BB28F8A53400FAE30C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8929B928F8A53400FAE30C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		1F04ADCC28EF74D000D88F37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F04ADCF28EF74D000D88F37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F04ADD128EF74D000D88F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F5E69F129087BB5006E4FB7 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		1F8929BA28F8A53400FAE30C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 		1F04ADC228EF74CF00D88F37 /* MovieQuizz */ = {
 			isa = PBXGroup;
 			children = (
+				1F5E69F129087BB5006E4FB7 /* Movies.swift */,
 				1F04ADC328EF74CF00D88F37 /* AppDelegate.swift */,
 				1F04ADC528EF74CF00D88F37 /* SceneDelegate.swift */,
 				1F04ADC728EF74CF00D88F37 /* ViewController.swift */,
@@ -140,6 +143,7 @@
 			files = (
 				1F04ADC828EF74CF00D88F37 /* ViewController.swift in Sources */,
 				1F04ADC428EF74CF00D88F37 /* AppDelegate.swift in Sources */,
+				1F5E69F229087BB5006E4FB7 /* Movies.swift in Sources */,
 				1F04ADC628EF74CF00D88F37 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/*
 class Movie {
     // properties with no default values
     var answer: String
@@ -80,14 +80,36 @@ var movie47 = Movie(answer: "Come and See", genre: "Drama, Thriller", actors: "A
  LIST OF MOVIES
  */
 var movies = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11, movie12, movie13, movie14, movie15, movie16, movie17, movie18, movie19, movie20, movie21, movie22, movie23, movie24, movie25, movie26, movie27, movie28, movie29, movie30, movie31, movie32, movie33, movie34, movie35, movie36, movie37, movie38, movie39, movie40, movie41, movie42, movie43, movie44, movie45, movie46, movie47]
+*/
+class nextViewController: UIViewController {
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var numOfQuest: UILabel!
+    @IBOutlet weak var finalScoreLabel: UILabel!
+    
+    var labelTextScore: String?
+    var labelTextQuest: String?
+    var labelTextFinal: String?
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            if let text = labelTextScore {
+                self.scoreLabel.text = text
+            }
+            if let text = labelTextQuest {
+                self.numOfQuest.text = text
+            }
+            if let text = labelTextFinal {
+                self.finalScoreLabel.text = text
+            }
+        }
+}
 
-class SecondView: UIViewController {
-    @IBOutlet var homeTitle: UILabel!
+class HomeView: UIViewController {
     @IBOutlet var playButton: UIButton!
 }
 class ViewController: UIViewController {
     
-    @IBOutlet var quizTitle: UILabel!
+    @IBOutlet var quizScore: UILabel!
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var questionNumLabel: UILabel!
     @IBOutlet var buttonAns1: UIButton!
@@ -112,6 +134,15 @@ class ViewController: UIViewController {
      Generates the First Question
      */
     var randQuestion = movies[Int.random(in: 0..<movies.count)]
+    
+    /*
+     updates the score
+     */
+    
+    var scoreNum : String {
+        return "Current Score: \(score)"
+    }
+    
     /*
      List of Hints
      */
@@ -142,8 +173,9 @@ class ViewController: UIViewController {
      Random number 1-3
      */
     let questions = [1, 2, 3, 4]
-    var randNum = Int.random(in:1..<4)
+    var randNum = Int.random(in:1..<5)
     var score = 0
+    var questionNumber = 0
 
     
     var currentQuestionIndex: Int = 1
@@ -160,18 +192,34 @@ class ViewController: UIViewController {
         } else {
             if currentQuestionIndex == 1 {
                 score = score + 1000
+                let placeScore: String = scoreNum
+                quizScore.text = placeScore
+                questionNumber = questionNumber + 1
             } else if currentQuestionIndex == 2 {
                 score = score + 750
+                let placeScore: String = scoreNum
+                quizScore.text = placeScore
+                questionNumber = questionNumber + 1
             } else if currentQuestionIndex == 3 {
                 score = score + 500
+                let placeScore: String = scoreNum
+                quizScore.text = placeScore
+                questionNumber = questionNumber + 1
             }
-            print("\(score)")
             currentNumberIndex = 4
             currentQuestionIndex = 0
         }
         if currentQuestionIndex == questions.count || currentNumberIndex == numQuestions.count{
             currentQuestionIndex = 0
             currentNumberIndex = 0
+            // Shows a new scene
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! nextViewController
+            nextViewController.labelTextScore = "Score: \(score)"
+            nextViewController.labelTextQuest = "Number of Questions: \(questionNumber)"
+            nextViewController.labelTextFinal = "Final Score: \(score + (250 * questionNumber))"
+            nextViewController.modalPresentationStyle = .fullScreen
+            self.present(nextViewController, animated:true, completion:nil)
             score = 0
         }
         if currentQuestionIndex == 1 {
@@ -203,10 +251,10 @@ class ViewController: UIViewController {
     @IBAction func nextQuestButton(_ sender: UIButton) {
         if questionNumLabel.text == numQuestions[0] || questionNumLabel.text == numQuestions[4]{
             for movie in movies{
-                movie.number = 1
+                movie.bool = true
             }
             randQuestion = movies[Int.random(in: 0..<movies.count)]
-            randNum = Int.random(in:1..<4)
+            randNum = Int.random(in:1..<5)
             questionNumLabel.text = numQuestions[1]
             questionLabel.text = question1
             currentQuestionIndex = 1
@@ -224,15 +272,15 @@ class ViewController: UIViewController {
      */
     func generate() -> String{
         var newMovie = movies[Int.random(in: 0..<movies.count)]
-        while (newMovie.number == 0 ) {
+        while (newMovie.bool == false ) {
             newMovie = movies[Int.random(in: 0..<movies.count)]
         }
-        newMovie.number = 0
+        newMovie.bool = false
         return newMovie.answer
     }
     
     func generateTitle() {
-        randQuestion.number = 0
+        randQuestion.bool = false
         
         //Placing a Title in Button 1
         if randNum == 1{
