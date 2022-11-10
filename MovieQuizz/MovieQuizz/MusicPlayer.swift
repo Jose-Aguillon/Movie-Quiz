@@ -14,7 +14,7 @@ class MusicPlayer {
     var audioPlayer: AVAudioPlayer?
 
     func startBackgroundMusic() {
-        if let bundle = Bundle.main.path(forResource: "The_Weeknd_Blinding_Lights", ofType: "mp3") {
+        if let bundle = Bundle.main.path(forResource: "MovieQuizz", ofType: "mp3") {
             let backgroundMusic = NSURL(fileURLWithPath: bundle)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf:backgroundMusic as URL)

@@ -29,7 +29,7 @@ class NormalViewController: UIViewController {
     "Question 1",
     "Question 2",
     "Question 3",
-    "CONGRATS YOU WIN!!!!!!"
+    "Correct"
     ]
     
         
