@@ -13,12 +13,16 @@ class finalViewController: UIViewController {
     @IBOutlet weak var numOfQuest: UILabel!
     @IBOutlet weak var finalScoreLabel: UILabel!
     
+    var labelTextWinLose: String?
     var labelTextScore: String?
     var labelTextQuest: String?
     var labelTextFinal: String?
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            if let text = labelTextWinLose {
+                self.winLose.text = text
+            }
             if let text = labelTextScore {
                 self.scoreLabel.text = text
             }
@@ -57,11 +61,11 @@ class ViewController: UIViewController {
      Output for Each Question
      */
     let numQuestions: [String] = [
-    "YOU LOSE",
+    "Wrong",
     "Question 1",
     "Question 2",
     "Question 3",
-    "CONGRATS YOU WIN!!!!!!"
+    "Correct"
     ]
     
         

@@ -25,7 +25,7 @@ class NormalViewController: UIViewController {
      Output for Each Question
      */
     let numQuestions: [String] = [
-    "YOU LOSE",
+    "Wrong",
     "Question 1",
     "Question 2",
     "Question 3",
@@ -108,7 +108,7 @@ class NormalViewController: UIViewController {
                 quizScore.text = placeScore
                 questionNumber = questionNumber + 1
                 amountOfQuestions = amountOfQuestions + 1
-                counter = 10
+                counter = 15
                 let placeInfo: String = quizInfo
                 quizLabel.text = placeInfo
                 
@@ -118,7 +118,7 @@ class NormalViewController: UIViewController {
                 quizScore.text = placeScore
                 questionNumber = questionNumber + 1
                 amountOfQuestions = amountOfQuestions + 1
-                counter = 10
+                counter = 15
                 let placeInfo: String = quizInfo
                 quizLabel.text = placeInfo
             } else if currentQuestionIndex == 3 {
@@ -127,7 +127,7 @@ class NormalViewController: UIViewController {
                 quizScore.text = placeScore
                 questionNumber = questionNumber + 1
                 amountOfQuestions = amountOfQuestions + 1
-                counter = 10
+                counter = 15
                 let placeInfo: String = quizInfo
                 quizLabel.text = placeInfo
             }
@@ -138,7 +138,7 @@ class NormalViewController: UIViewController {
             currentQuestionIndex = 0
             currentNumberIndex = 0
             amountOfQuestions = amountOfQuestions + 1
-            counter = 10
+            counter = 15
             let placeInfo: String = quizInfo
             quizLabel.text = placeInfo
         }
@@ -175,6 +175,7 @@ class NormalViewController: UIViewController {
             // Shows a new scene
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! finalViewController
+            nextViewController.labelTextWinLose = "Game Over"
             nextViewController.labelTextScore = "Normal Mode"
             nextViewController.labelTextQuest = ""
             nextViewController.labelTextFinal = "Final Score: \(score) / 10"
@@ -269,11 +270,11 @@ class NormalViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
        }
     
-    var counter = 10
+    var counter = 15
        @objc func updateCounter() {
            //example functionality
            if questionNumLabel.text == numQuestions[0] || questionNumLabel.text == numQuestions[4] {
-               counter = 10
+               counter = 15
            } else if counter > 0 {
                quizLabel.text = "Question: \(amountOfQuestions)   Timer: \(counter)"
                counter -= 1
@@ -281,6 +282,7 @@ class NormalViewController: UIViewController {
                // Shows a new scene
                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! finalViewController
+               nextViewController.labelTextWinLose = "You Lose"
                nextViewController.labelTextScore = "Normal Mode"
                nextViewController.labelTextQuest = ""
                nextViewController.labelTextFinal = "Final Score: \(score) / 10"
