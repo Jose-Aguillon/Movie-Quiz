@@ -276,7 +276,7 @@ class NormalViewController: UIViewController {
            if questionNumLabel.text == numQuestions[0] || questionNumLabel.text == numQuestions[4] {
                counter = 15
            } else if counter > 0 {
-               quizLabel.text = "Question: \(amountOfQuestions)   Timer: \(counter)"
+               quizLabel.text = "Question: \(amountOfQuestions + 1)   Timer: \(counter)"
                counter -= 1
            } else {
                // Shows a new scene

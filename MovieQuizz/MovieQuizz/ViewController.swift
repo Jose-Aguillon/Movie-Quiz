@@ -41,7 +41,7 @@ class HomeView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Start music
-        MusicPlayer.shared.startBackgroundMusic()
+       // MusicPlayer.shared.startBackgroundMusic()
     }
 }
 class ViewController: UIViewController {

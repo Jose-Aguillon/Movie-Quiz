@@ -301,7 +301,7 @@ class _1V1ViewController: UIViewController {
            if questionNumLabel.text == numQuestions[0] || questionNumLabel.text == numQuestions[4] {
                counter = 15
            } else if counter > 0 {
-               quizLabel.text = "Player: \(player)   Question: \(amountOfQuestions)   Timer: \(counter)"
+               quizLabel.text = "Player: \(player)   Question: \(amountOfQuestions + 1)   Timer: \(counter)"
                counter -= 1
            } else {
                // Shows a new scene
